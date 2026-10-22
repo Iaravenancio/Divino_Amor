@@ -96,6 +96,7 @@
 @utility gold-rule { height: 1px; background: var(--gradient-gold); }
 
 /* Home hero: one continuous black-to-wine atmosphere */
+.site-nav.rise { animation: rise .8s ease-out .1s both; }
 .site-nav {
   background: linear-gradient(180deg, #000000 0%, #1a0810 72%, #1a0810 100%);
 }
