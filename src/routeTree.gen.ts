@@ -10,12 +10,42 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as EntrarRouteImport } from './routes/entrar'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as NovidadesRouteImport } from './routes/novidades'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as ProdutosRouteImport } from './routes/produtos'
+import { Route as SacolaRouteImport } from './routes/sacola'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TermosRouteImport } from './routes/termos'
+import { Route as TrocasRouteImport } from './routes/trocas'
+import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NovidadesRoute = NovidadesRouteImport.update({
@@ -23,40 +53,150 @@ const NovidadesRoute = NovidadesRouteImport.update({
   path: '/novidades',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProdutosRoute = ProdutosRouteImport.update({
   id: '/produtos',
   path: '/produtos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SacolaRoute = SacolaRouteImport.update({
+  id: '/sacola',
+  path: '/sacola',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrocasRoute = TrocasRouteImport.update({
+  id: '/trocas',
+  path: '/trocas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
+  id: '/produto/$slug',
+  path: '/produto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contato': typeof ContatoRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
   '/novidades': typeof NovidadesRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/sacola': typeof SacolaRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/trocas': typeof TrocasRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contato': typeof ContatoRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
   '/novidades': typeof NovidadesRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/sacola': typeof SacolaRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/trocas': typeof TrocasRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contato': typeof ContatoRoute
+  '/entrar': typeof EntrarRoute
+  '/favoritos': typeof FavoritosRoute
   '/novidades': typeof NovidadesRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/produtos': typeof ProdutosRoute
+  '/sacola': typeof SacolaRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/trocas': typeof TrocasRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/novidades' | '/produtos'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/contato'
+    | '/entrar'
+    | '/favoritos'
+    | '/novidades'
+    | '/privacidade'
+    | '/produtos'
+    | '/sacola'
+    | '/sobre'
+    | '/termos'
+    | '/trocas'
+    | '/produto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/novidades' | '/produtos'
-  id: '__root__' | '/' | '/novidades' | '/produtos'
+  to:
+    | '/'
+    | '/checkout'
+    | '/contato'
+    | '/entrar'
+    | '/favoritos'
+    | '/novidades'
+    | '/privacidade'
+    | '/produtos'
+    | '/sacola'
+    | '/sobre'
+    | '/termos'
+    | '/trocas'
+    | '/produto/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/contato'
+    | '/entrar'
+    | '/favoritos'
+    | '/novidades'
+    | '/privacidade'
+    | '/produtos'
+    | '/sacola'
+    | '/sobre'
+    | '/termos'
+    | '/trocas'
+    | '/produto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ContatoRoute: typeof ContatoRoute
+  EntrarRoute: typeof EntrarRoute
+  FavoritosRoute: typeof FavoritosRoute
   NovidadesRoute: typeof NovidadesRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   ProdutosRoute: typeof ProdutosRoute
+  SacolaRoute: typeof SacolaRoute
+  SobreRoute: typeof SobreRoute
+  TermosRoute: typeof TermosRoute
+  TrocasRoute: typeof TrocasRoute
+  ProdutoSlugRoute: typeof ProdutoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +208,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/novidades': {
       id: '/novidades'
       path: '/novidades'
       fullPath: '/novidades'
       preLoaderRoute: typeof NovidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/produtos': {
@@ -82,13 +257,58 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProdutosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sacola': {
+      id: '/sacola'
+      path: '/sacola'
+      fullPath: '/sacola'
+      preLoaderRoute: typeof SacolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trocas': {
+      id: '/trocas'
+      path: '/trocas'
+      fullPath: '/trocas'
+      preLoaderRoute: typeof TrocasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produto/$slug': {
+      id: '/produto/$slug'
+      path: '/produto/$slug'
+      fullPath: '/produto/$slug'
+      preLoaderRoute: typeof ProdutoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutRoute: CheckoutRoute,
+  ContatoRoute: ContatoRoute,
+  EntrarRoute: EntrarRoute,
+  FavoritosRoute: FavoritosRoute,
   NovidadesRoute: NovidadesRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   ProdutosRoute: ProdutosRoute,
+  SacolaRoute: SacolaRoute,
+  SobreRoute: SobreRoute,
+  TermosRoute: TermosRoute,
+  TrocasRoute: TrocasRoute,
+  ProdutoSlugRoute: ProdutoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
