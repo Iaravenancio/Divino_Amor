@@ -72,7 +72,7 @@ export default function StrokeText({
       aria-label={text}
       role="img"
     >
-      <svg id={`stroke-${id}`} className="stroke-text-svg" viewBox={`0 0 ${Math.max(600, text.length * 100)} 150`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <svg id={`stroke-${id}`} className="stroke-text-svg" viewBox={`0 0 ${Math.max(600, text.length * 80)} 150`} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>
           <linearGradient id={`gold-${id}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#E6C879" />
