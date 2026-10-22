@@ -5,7 +5,7 @@ import l4 from "@/assets/looks/look-4.webp.asset.json";
 import l5 from "@/assets/looks/look-5.webp.asset.json";
 import l6 from "@/assets/looks/look-6.webp.asset.json";
 
-export const LOOKS = [l1.url, l2.url, l3.url, l4.url, l5.url, l6.url];
+export const LOOKS = [l1.url, l2.url, l3.url, l4.url, l5.url, l6.url] as [string, string, string, string, string, string];
 
 export type Category = "Vestidos" | "Macacões" | "Conjuntos" | "Acessórios";
 export const CATEGORIES: Category[] = ["Vestidos", "Macacões", "Conjuntos", "Acessórios"];
@@ -18,9 +18,9 @@ export interface Product {
   price: number;
   oldPrice?: number;
   badge?: "Novo" | "Promoção";
-  colors: string[];
+  colors: [string, ...string[]];
   sizes: string[];
-  images: string[];
+  images: [string, string];
   description: string;
   composition: string;
   createdAt: number;
