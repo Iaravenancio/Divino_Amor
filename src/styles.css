@@ -114,3 +114,7 @@
   .letter-lid { animation: none; transform: translateY(-101%); }
   .rise { animation: none; opacity: 1; }
 }
+
+@keyframes letter-in { from { fill: white; } to { fill: black; } }
+.letter-fill { fill: white; animation: letter-in 0.6s ease-out forwards; }
+@media (prefers-reduced-motion: reduce) { .letter-fill { animation: none; fill: black; } }
