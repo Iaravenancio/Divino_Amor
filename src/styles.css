@@ -26,8 +26,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-destructive-foreground: #fff;
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -68,7 +68,7 @@
   --wine: #561228;
   --ink: #000000;
   --ink-foreground: #ffffff;
-  --nav: #c2c2c2;
+  --nav: #d8d0c8;
   --cream: #f7f1e8;
   --gradient-gold: linear-gradient(135deg, #e6c879, #c9a24b 50%, #b8893a);
 }
@@ -93,28 +93,105 @@
   color: transparent;
 }
 @utility bg-gold-gradient { background: var(--gradient-gold); }
-@utility gold-rule {
-  height: 1px;
-  background: var(--gradient-gold);
-}
+@utility gold-rule { height: 1px; background: var(--gradient-gold); }
 
-/* Header carousel */
-@keyframes marquee-ltr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-.marquee-track { animation: marquee-ltr 40s linear infinite; }
+/* Home hero: one continuous black-to-wine atmosphere */
+.site-nav {
+  background: linear-gradient(180deg, #000000 0%, #1a0810 72%, #1a0810 100%);
+}
+.nav-inner { border-bottom: 1px solid rgba(201, 162, 75, 0.22); }
+.nav-link { letter-spacing: 0.25em; }
+.mobile-drawer { background: linear-gradient(180deg, #1a0810 0%, #561228 100%); }
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 54% 38% at 50% 0%, rgba(201, 162, 75, 0.18), transparent 78%),
+    linear-gradient(180deg, #1a0810 0%, #561228 44%, #1a0810 100%);
+}
+.hero-wordmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: clamp(112px, 17vh, 190px);
+  padding: 8px 4vw 16px;
+  background: radial-gradient(ellipse at 50% 40%, rgba(201,162,75,.1), transparent 68%);
+}
+.stroke-text-wrap { width: min(100%, 1200px); margin: 0 auto; }
+.stroke-text-svg { display: block; width: 100%; height: auto; max-height: 150px; overflow: visible; }
+.stroke-text-outline { paint-order: stroke fill; }
+.stroke-letter { stroke-dasharray: 0; stroke-dashoffset: 0; }
+.stroke-text-fill { opacity: 0; animation: fill-in .25s ease-out forwards; animation-delay: 2.2s; }
+.stroke-fill-wipe { width: 0; animation: wipe-in .8s ease-out forwards; }
+.wipe-reverse { transform-origin: right center; }
+@keyframes wipe-in { from { width: 0; } to { width: 100%; } }
+@keyframes fill-in { to { opacity: 1; } }
+.stroke-text-shadow { filter: drop-shadow(0 0 12px rgba(201,162,75,.12)); }
+.hero-carousel {
+  position: relative;
+  height: clamp(280px, 49vh, 560px);
+  overflow: hidden;
+  background: #1a0810;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 18%, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 18%, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  animation: hero-fade .9s ease-out .8s both;
+}
+.marquee-track { animation: marquee-ltr 45s linear infinite; }
 .hero-band:hover .marquee-track { animation-play-state: paused; }
-.warm-photo { filter: sepia(0.18) saturate(1.05) brightness(1.05); }
-
-@keyframes lid-up { from { transform: translateY(0); } to { transform: translateY(-101%); } }
-.letter-lid { animation: lid-up 0.7s cubic-bezier(.7,0,.2,1) forwards; }
-@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.rise { opacity: 0; animation: rise 0.8s ease-out forwards; }
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; transform: translateX(-50%); }
-  .letter-lid { animation: none; transform: translateY(-101%); }
-  .rise { animation: none; opacity: 1; }
+.hero-look { width: 26vw; margin-right: 12px; border-radius: 2px; }
+.warm-photo { filter: sepia(0.12) saturate(1.04) brightness(.94); transition: filter .35s ease; }
+.hero-look:hover .warm-photo { filter: sepia(.04) saturate(1.08) brightness(1.02); }
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 24px 20px 42px;
+  text-align: center;
+  background: linear-gradient(180deg, #1a0810 0%, #000 100%);
+  animation: rise .8s ease-out 1.25s both;
 }
+.hero-tagline { color: #f7f1e8; font-family: var(--font-serif); font-size: clamp(18px, 2vw, 25px); font-style: italic; }
+.hero-cta {
+  display: inline-block;
+  padding: 14px 38px;
+  border: 1px solid rgba(201,162,75,.8);
+  border-radius: 2px;
+  background: #561228;
+  color: #e6c879;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  transition: background .25s ease, color .25s ease;
+}
+.hero-cta:hover { background: #c9a24b; color: #000; }
+@keyframes marquee-ltr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade { from { opacity: 0; } to { opacity: 1; } }
 
-@keyframes letter-in { from { fill: white; } to { fill: black; } }
-.letter-fill { fill: white; animation: letter-in 0.6s ease-out forwards; }
-@media (prefers-reduced-motion: reduce) { .letter-fill { animation: none; fill: black; } }
+@media (max-width: 1023px) {
+  .hero-wordmark { min-height: 108px; padding-inline: 3vw; }
+  .stroke-text-svg { max-height: 112px; }
+  .hero-look { width: 36vw; }
+  .nav-inner { grid-template-columns: auto 1fr auto; }
+  .nav-menu-button { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 639px) {
+  .hero-wordmark { min-height: 94px; padding: 8px 2vw 14px; }
+  .stroke-text-svg { max-height: 88px; }
+  .hero-carousel { height: 44vh; min-height: 250px; }
+  .hero-look { width: 62vw; }
+  .hero-copy { padding-top: 20px; padding-bottom: 32px; }
+  .hero-tagline { max-width: 300px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .marquee-track { animation: none; transform: translateX(0); }
+  .stroke-text-fill { opacity: 1; }
+  .stroke-fill-wipe { width: 100%; }
+  .hero-copy, .hero-carousel { animation: none; opacity: 1; }
+}
