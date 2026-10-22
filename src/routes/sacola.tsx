@@ -16,7 +16,7 @@ export function useTotals() {
   const [applied, setApplied] = useState<string | null>(null);
   const [cep, setCep] = useState("");
   const sub = subtotalOf(cart);
-  const discount = applied ? sub * COUPONS[applied] : 0;
+  const discount = applied ? sub * (COUPONS[applied] ?? 0) : 0;
   const ship = shippingFor(cep, sub);
   return { cart, coupon, setCoupon, applied, setApplied, cep, setCep, sub, discount, ship, total: sub - discount + (ship ?? 0) };
 }

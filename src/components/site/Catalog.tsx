@@ -8,7 +8,7 @@ import { CATEGORIES, PRODUCTS, SIZES } from "@/lib/products";
 const COLORS = Array.from(new Set(PRODUCTS.flatMap((p) => p.colors)));
 const PAGE = 8;
 
-export function Catalog({ title, onlyNew = false, initialCat }: { title: string; onlyNew?: boolean; initialCat?: string }) {
+export function Catalog({ title, onlyNew = false, initialCat }: { title: string; onlyNew?: boolean; initialCat?: string | undefined }) {
   const [q, setQ] = useState("");
   const [cats, setCats] = useState<string[]>(initialCat ? [initialCat] : []);
   const [sizes, setSizes] = useState<string[]>([]);
