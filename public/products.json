@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "macacao-pantalona-rosa-cha",
+    "name": "Macacão Pantalona Rosa Chá",
+    "category": "Macacões",
+    "price": 289.9,
+    "colors": [
+      "Rosa Chá"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "images": [
+      "/looks/look-1.webp",
+      "/looks/look-5.webp"
+    ],
+    "description": "Macacão de alcinha com pantalona fluida e caimento leve.",
+    "composition": "100% viscose",
+    "createdAt": 6
+  },
+  {
+    "slug": "conjunto-cropped-halter-short-azul-petroleo",
+    "name": "Conjunto Cropped Halter e Short Azul Petróleo",
+    "category": "Conjuntos",
+    "price": 219.9,
+    "colors": [
+      "Azul Petróleo"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G"
+    ],
+    "images": [
+      "/looks/look-2.webp",
+      "/looks/look-6.webp"
+    ],
+    "description": "Cropped com gola halter e short de cintura alta.",
+    "composition": "97% algodão, 3% elastano",
+    "createdAt": 5
+  },
+  {
+    "slug": "vestido-midi-pink-pesponto",
+    "name": "Vestido Midi Pink com Pesponto",
+    "category": "Vestidos",
+    "price": 259.9,
+    "oldPrice": 319.9,
+    "colors": [
+      "Pink"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "images": [
+      "/looks/look-3.webp",
+      "/looks/look-1.webp"
+    ],
+    "description": "Vestido midi evasê com pespontos contrastantes.",
+    "composition": "Linho misto",
+    "createdAt": 4
+  },
+  {
+    "slug": "macacao-terracota-bolsos-cargo",
+    "name": "Macacão Terracota com Bolsos Cargo",
+    "category": "Macacões",
+    "price": 299.9,
+    "colors": [
+      "Terracota"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "images": [
+      "/looks/look-4.webp",
+      "/looks/look-2.webp"
+    ],
+    "description": "Macacão regata com bolsos cargo e perna ampla.",
+    "composition": "Viscolinho",
+    "createdAt": 3
+  },
+  {
+    "slug": "conjunto-cropped-pantalona-bege",
+    "name": "Conjunto Cropped e Pantalona Bege",
+    "category": "Conjuntos",
+    "price": 269.9,
+    "oldPrice": 329.9,
+    "colors": [
+      "Bege"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G"
+    ],
+    "images": [
+      "/looks/look-5.webp",
+      "/looks/look-3.webp"
+    ],
+    "description": "Cropped e pantalona de alfaiataria.",
+    "composition": "Crepe",
+    "createdAt": 2
+  },
+  {
+    "slug": "vestido-midi-vermelho-cinto",
+    "name": "Vestido Midi Vermelho com Cinto",
+    "category": "Vestidos",
+    "price": 279.9,
+    "colors": [
+      "Vermelho"
+    ],
+    "sizes": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "images": [
+      "/looks/look-6.webp",
+      "/looks/look-4.webp"
+    ],
+    "description": "Vestido midi com cinto e barra sereia.",
+    "composition": "Linho misto",
+    "createdAt": 1
+  }
+]
